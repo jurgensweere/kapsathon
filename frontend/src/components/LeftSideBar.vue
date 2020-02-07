@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="my-2">
-    <b-button class="w-100" variant="success">New message</b-button>
+    <b-button class="w-100 border-0" variant="success">New message</b-button>
     </div>
 <b-list-group v-for="item in elements" :key="item.id">
  <b-list-group-item href="#" variant="light">{{item.name}}
@@ -19,10 +19,10 @@ export default {
   props: {
     elements: Array
   },
-  data:()=>{
-    return{
-      elements: {type: Array, default: []}
-    }
+  data: () => {
+    return {
+      elements: { type: Array, default: [] }
+    };
   },
   created(){
     this.elements = [ 

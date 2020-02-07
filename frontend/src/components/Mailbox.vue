@@ -5,7 +5,6 @@
         </div>
         <div class="col-8">
         <email-body></email-body>
-
         </div>
     </div>
 </template>
