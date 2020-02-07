@@ -4,18 +4,21 @@
         <email-list :emails="emails"></email-list>
         </div>
         <div class="col-8">
-        here is the body
+        <email-body></email-body>
+
         </div>
     </div>
 </template>
 
 <script>
 import EmailList from './EmailList';
+import EmailBody from './EmailBody';
 
 export default {
   name: "Mailbox",
   components: {
-      EmailList
+      EmailList,
+      EmailBody
   },
   props: ['emails'],
   methods: {
