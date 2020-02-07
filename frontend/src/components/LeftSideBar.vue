@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="my-2">
-   
-    <b-button class="w-100" variant="success" @click="compose()">New message
-      <b-icon class="float-left" icon="cursor" scale="1" variant="light"/>
-    </b-button>
+      <b-button class="w-100" variant="success" @click="compose()">
+        New message
+        <b-icon class="float-left" icon="cursor" scale="1" variant="light" />
+      </b-button>
     </div>
     <b-list-group v-for="item in elements" :key="item.id">
       <b-list-group-item href="#" variant="light" @click="openMailbox(item)">
@@ -23,11 +23,11 @@ export default {
   data: () => {
     return {
       elements: [
-      { name: "Inbox", id: 1, icon: "inbox-fill", counter: 3 },
-      { name: "Archive", id: 2, icon: "archive-fill", counter: 3 },
-      { name: "Sent", id: 3, icon: "eject-fill", counter: 3 },
-      { name: "Spam", id: 4, icon: "cone", counter: 3 }
-    ]
+        { name: "Inbox", id: 1, icon: "inbox-fill", counter: 3 },
+        { name: "Archive", id: 2, icon: "archive-fill", counter: 3 },
+        { name: "Sent", id: 3, icon: "eject-fill", counter: 3 },
+        { name: "Spam", id: 4, icon: "cone", counter: 3 }
+      ]
     };
   },
   methods: {
@@ -38,17 +38,26 @@ export default {
       //TODO fetch data
       const emails = [
         {
-          date: new Date(),
-          subject: 'Nigerian Prince',
-          sender: 'hax@stuff.ru',
-          body: 'body1',
-        }, {
-          date: new Date(),
-          subject: 'About that thing',
-          sender: 'hr@nl.abnamro.com',
-          body: 'body2',
+          id: "1",
+          sender: "nigerian_prince@hotmale.com",
+          receiver: "jonnie85@gmail.com",
+          subject: "Free money my friend",
+          body: "Hi I offer you free money",
+          date: "2018-06-19 10:34:09",
+          meta: "meta meta meta meta META",
+          metadata: "meta meta meta meta META"
+        },
+        {
+          id: "1",
+          sender: "nigerian_prince@hotmale.com",
+          receiver: "jonnie85@gmail.com",
+          subject: "Free money my friend",
+          body: "Hi I offer you free money",
+          date: "2018-06-19 10:34:09",
+          meta: "meta meta meta meta META",
+          metadata: "meta meta meta meta META"
         }
-      ]
+      ];
       console.log(mailbox);
       EventBus.$emit("open-mailbox", emails);
     }
