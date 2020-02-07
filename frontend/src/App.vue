@@ -2,6 +2,7 @@
   <div id="app" class="container">
     <div class="row">
       <div class="col-3">
+        <brand></brand>
         <left-side-bar/>
       </div>
       <div class="col-9">
@@ -18,13 +19,15 @@
 import LeftSideBar from './components/LeftSideBar.vue'
 import Mailbox from './components/Mailbox.vue'
 import Compose from './components/Compose.vue'
+import Brand from './components/Brand.vue'
 
 export default {
   name: 'App',
   components: {
     LeftSideBar,
     Mailbox,
-    Compose
+    Compose,
+    Brand,
   },
   data() {
     return {
