@@ -2,7 +2,9 @@
   <div>
     <b-button variant="success">New message</b-button>
 <b-list-group v-for="item in elements" :key="item.id">
- <b-list-group-item href="#" variant="light">{{item.name}}</b-list-group-item>
+ <b-list-group-item href="#" variant="light">{{item.name}}
+   <b-icon :icon="item.icon" scale="1" variant="danger"></b-icon>
+ </b-list-group-item>
 </b-list-group>
    
   </div>
@@ -21,11 +23,10 @@ export default {
   },
   created(){
     this.elements = [ 
-      {name:'Starred', id:1},
-      {name:'Archive', id:2},
-      {name:'Trash', id:3},
-      {name:'Spam', id:4},
-      {name:'Sent', id:5},
+      {name:'Inbox', id:1, icon: 'inbox-fill'},
+      {name:'Archive', id:2, icon: 'archive-fill'},
+      {name:'Sent', id:3 , icon: 'eject-fill'},
+      {name:'Spam', id:4, icon: 'cone'} 
       ]
   }
 };
