@@ -1,9 +1,12 @@
 <template>
   <div>
-    <b-button variant="success">New message</b-button>
+    <div class="my-2">
+    <b-button class="w-100" variant="success">New message</b-button>
+    </div>
 <b-list-group v-for="item in elements" :key="item.id">
  <b-list-group-item href="#" variant="light">{{item.name}}
-   <b-icon :icon="item.icon" scale="1" variant="danger"></b-icon>
+   <b-badge class="float-right" variant="success">{{item.counter}}</b-badge>
+   <b-icon class="float-left" :icon="item.icon" scale="1" variant="success"></b-icon>
  </b-list-group-item>
 </b-list-group>
    
@@ -23,10 +26,10 @@ export default {
   },
   created(){
     this.elements = [ 
-      {name:'Inbox', id:1, icon: 'inbox-fill'},
-      {name:'Archive', id:2, icon: 'archive-fill'},
-      {name:'Sent', id:3 , icon: 'eject-fill'},
-      {name:'Spam', id:4, icon: 'cone'} 
+      {name:'Inbox', id:1, icon: 'inbox-fill', counter: 3},
+      {name:'Archive', id:2, icon: 'archive-fill', counter: 3},
+      {name:'Sent', id:3 , icon: 'eject-fill', counter: 3},
+      {name:'Spam', id:4, icon: 'cone', counter: 3} 
       ]
   }
 };
