@@ -1,7 +1,22 @@
 <template>
-  <div id="app">
-    <left-side-bar/>
-    <email-list :emails="emails"></email-list>
+  <div id="app" class="container">
+    <div class="row">
+      <div class="col-3">
+        <left-side-bar/>
+      </div>
+      <div class="col-9">
+        <!-- below is part of some view -->
+        <div class="row">
+          <div class="col-4">
+            <email-list :emails="emails"></email-list>
+          </div>
+          <div class="col-8">
+            here is the body
+          </div>
+        </div>
+        <!-- end -->
+      </div>
+    </div>
   </div>
 </template>
 
