@@ -7,7 +7,7 @@
       </div>
       <div class="col-9 p-0 mt-101">
         <!-- below is part of some view -->
-        <mailbox v-if="!compose"></mailbox>
+        <mailbox v-show="!compose"></mailbox>
         <compose v-if="compose"></compose>
         <!-- end -->
       </div>
