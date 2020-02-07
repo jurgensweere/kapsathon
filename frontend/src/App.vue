@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <div class="row">
-      <div class="col-3 p-0">
+      <div class="col-3 h-100 bg-dark py-2">
         <brand></brand>
         <left-side-bar/>
       </div>
       <div class="col-9 p-0 mt-101">
         <!-- below is part of some view -->
-        <mailbox :emails="emails" v-if="!compose"></mailbox>
+        <mailbox v-show="!compose"></mailbox>
         <compose v-if="compose"></compose>
         <!-- end -->
       </div>
@@ -33,19 +33,6 @@ export default {
   data() {
     return {
       compose: false,
-      emails: [
-        {
-          date: new Date(),
-          subject: 'Nigerian Prince',
-          sender: 'hax@stuff.ru',
-          body: 'body1',
-        }, {
-          date: new Date(),
-          subject: 'About that thing',
-          sender: 'hr@nl.abnamro.com',
-          body: 'body2',
-        }
-      ]
     }
   },
   created() {

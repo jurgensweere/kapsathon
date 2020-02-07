@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="my-2">
-      <b-button class="w-100 border-0" variant="success" @click="compose()">New message</b-button>
+   
+    <b-button class="w-100" variant="success" @click="compose()">New message
+      <b-icon class="float-left" icon="cursor" scale="1" variant="light"/>
+    </b-button>
     </div>
     <b-list-group v-for="item in elements" :key="item.id">
       <b-list-group-item href="#" variant="light" @click="openMailbox(item)">
@@ -33,8 +36,21 @@ export default {
     },
     openMailbox(mailbox) {
       //TODO fetch data
+      const emails = [
+        {
+          date: new Date(),
+          subject: 'Nigerian Prince',
+          sender: 'hax@stuff.ru',
+          body: 'body1',
+        }, {
+          date: new Date(),
+          subject: 'About that thing',
+          sender: 'hr@nl.abnamro.com',
+          body: 'body2',
+        }
+      ]
       console.log(mailbox);
-      EventBus.$emit("open-mailbox", {});
+      EventBus.$emit("open-mailbox", emails);
     }
   }
 };
