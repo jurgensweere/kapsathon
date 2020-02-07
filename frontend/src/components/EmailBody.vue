@@ -19,7 +19,6 @@ export default {
   created() {
       EventBus.$on('emailSelected', (email) => {
           this.email = email;
-          console.log('email= ', this.email)
       })
   }
 };
