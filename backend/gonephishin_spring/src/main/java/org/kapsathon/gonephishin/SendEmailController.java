@@ -21,6 +21,10 @@ public class SendEmailController {
 	
 	@Autowired
 	SendEmailService sendEmailService;
+	
+	/*
+	 * Method to map the send email requests
+	 */
 
 	  @PostMapping()
 	  public ResponseEntity<Object> emailSender(@RequestBody Email email) {

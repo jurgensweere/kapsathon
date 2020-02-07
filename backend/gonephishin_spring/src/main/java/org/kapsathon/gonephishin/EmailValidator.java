@@ -5,6 +5,9 @@ import javax.mail.internet.InternetAddress;
 
 import org.springframework.stereotype.Component;
 
+/*
+ * Validates email address
+ */
 @Component
 public class EmailValidator {
 
