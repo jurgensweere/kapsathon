@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+/*
+ * Service class to process the send email requests
+ */
 public class SendEmailService {
 
 	private static final String INBOX = "inbox";
