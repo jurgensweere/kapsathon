@@ -23,7 +23,7 @@ public class SendEmailController {
 	SendEmailService sendEmailService;
 
 	  @PostMapping()
-	  public ResponseEntity<Void> emailSender(@RequestBody Email email) {
+	  public ResponseEntity<Object> emailSender(@RequestBody Email email) {
 		return sendEmailService.sendEmail(email);
 		  
 	  }

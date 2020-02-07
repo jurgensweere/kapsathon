@@ -16,7 +16,7 @@ public class SendEmailService {
 	@Autowired
 	EmailRepository emailRepository;
 	
-	public ResponseEntity<Void> sendEmail(Email email) {
+	public ResponseEntity<Object> sendEmail(Email email) {
 		if(emailValidator.validate(email.getSender())) {
 			email.setMeta(INBOX);
 		emailRepository.save(email);
