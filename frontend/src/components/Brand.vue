@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-2">
+    <div class="mb-2 brand">
         <img src="~@/assets/che.webp"> Che Mail
     </div>
 </template>
@@ -12,7 +12,10 @@ export default {
 </script>
 
 <style>
-    img {
+    .brand img {
         width: 40px;
+    }
+    .brand {
+        color: white;
     }
 </style>
