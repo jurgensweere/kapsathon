@@ -4,7 +4,7 @@
         <email-list :emails="emails"></email-list>
         </div>
         <div class="col-8">
-        <email-body :emails="emails"></email-body>
+        <email-body></email-body>
 
         </div>
     </div>
