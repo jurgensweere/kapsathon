@@ -65,4 +65,8 @@ html, body, #app {
 .box-shadow{
   box-shadow: -4px 0px 16px -9px rgba(0,0,0,0.62);
 }
+
+.list-group {
+  text-align: left;
+}
 </style>

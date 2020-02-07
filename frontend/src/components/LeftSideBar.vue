@@ -49,7 +49,7 @@ export default {
         },
         {
           id: "1",
-          sender: "nigerian_prince@hotmale.com",
+          sender: "kenyan_prince@hotmale.com",
           receiver: "jonnie85@gmail.com",
           subject: "Free money my friend",
           body: "Hi I do not offer you free money",
