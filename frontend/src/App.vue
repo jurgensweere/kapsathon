@@ -5,7 +5,7 @@
         <brand></brand>
         <left-side-bar/>
       </div>
-      <div class="col-9 p-0 mt-101">
+      <div class="col-9 p-0 mt-111">
         <!-- below is part of some view -->
         <mailbox v-show="!compose"></mailbox>
         <compose v-if="compose"></compose>
@@ -58,8 +58,11 @@ html, body, #app {
   color: #2c3e50;
 }
 
-.mt-101 {
-  margin-top: 101px;
+.mt-111 {
+  margin-top: 111px;
 }
 
+.border-radius-0 {
+  border-radius: 0 !important;
+}
 </style>

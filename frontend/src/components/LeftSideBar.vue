@@ -1,13 +1,13 @@
 <template>
   <div>
     <div class="my-2">
-      <b-button class="w-100" variant="success" @click="compose()">
+      <b-button class="w-100 border-0 border-radius-0" variant="success" @click="compose()">
         New message
         <b-icon class="float-left" icon="cursor" scale="1" variant="light" />
       </b-button>
     </div>
     <b-list-group v-for="item in elements" :key="item.id">
-      <b-list-group-item href="#" variant="light" @click="openMailbox(item)">
+      <b-list-group-item href="#" variant="light" @click="openMailbox(item)" class="border-radius-0">
         {{item.name}}
         <b-badge class="float-right" variant="success">{{item.counter}}</b-badge>
         <b-icon class="float-left" :icon="item.icon" scale="1" variant="success"></b-icon>
