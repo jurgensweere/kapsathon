@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <left-side-bar/>
     <email-list :emails="emails"></email-list>
   </div>
 </template>
 
 <script>
+import LeftSideBar from './components/LeftSideBar.vue'
 import EmailList from './components/EmailList.vue'
 
 export default {
   name: 'App',
   components: {
+    LeftSideBar,
     EmailList
   },
   data() {
