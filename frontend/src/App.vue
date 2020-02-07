@@ -7,7 +7,7 @@
       </div>
       <div class="col-9">
         <!-- below is part of some view -->
-        <mailbox :emails="emails" v-if="!compose"></mailbox>
+        <mailbox v-if="!compose"></mailbox>
         <compose v-if="compose"></compose>
         <!-- end -->
       </div>
@@ -33,19 +33,6 @@ export default {
   data() {
     return {
       compose: false,
-      emails: [
-        {
-          date: new Date(),
-          subject: 'Nigerian Prince',
-          sender: 'hax@stuff.ru',
-          body: 'body1',
-        }, {
-          date: new Date(),
-          subject: 'About that thing',
-          sender: 'hr@nl.abnamro.com',
-          body: 'body2',
-        }
-      ]
     }
   },
   created() {

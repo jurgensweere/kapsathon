@@ -33,8 +33,21 @@ export default {
     },
     openMailbox(mailbox) {
       //TODO fetch data
+      const emails = [
+        {
+          date: new Date(),
+          subject: 'Nigerian Prince',
+          sender: 'hax@stuff.ru',
+          body: 'body1',
+        }, {
+          date: new Date(),
+          subject: 'About that thing',
+          sender: 'hr@nl.abnamro.com',
+          body: 'body2',
+        }
+      ]
       console.log(mailbox);
-      EventBus.$emit("open-mailbox", {});
+      EventBus.$emit("open-mailbox", emails);
     }
   }
 };

@@ -15,18 +15,22 @@ import { EventBus } from "../event-bus";
 export default {
   name: "EmailList",
   components: {},
-  props: ['emails'],
   data() {
       return {
+          emails: [],
           activeIndex: -1
       }
   },
   methods: {
       openEmail(email, index) {
           this.activeIndex = index;
-          console.log(email);
           EventBus.$emit('emailSelected', email)
       }
+  },
+  created() {
+      EventBus.$on('open-mailbox', (emails) => {
+          this.emails = emails;
+      });
   }
 };
 </script>
