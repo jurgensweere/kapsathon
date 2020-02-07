@@ -6,14 +6,8 @@
       </div>
       <div class="col-9">
         <!-- below is part of some view -->
-        <div class="row">
-          <div class="col-4">
-            <email-list :emails="emails"></email-list>
-          </div>
-          <div class="col-8">
-            here is the body
-          </div>
-        </div>
+        <mailbox :emails="emails"></mailbox>
+        <compose></compose>
         <!-- end -->
       </div>
     </div>
@@ -22,13 +16,15 @@
 
 <script>
 import LeftSideBar from './components/LeftSideBar.vue'
-import EmailList from './components/EmailList.vue'
+import Mailbox from './components/Mailbox.vue'
+import Compose from './components/Compose.vue'
 
 export default {
   name: 'App',
   components: {
     LeftSideBar,
-    EmailList
+    Mailbox,
+    Compose
   },
   data() {
     return {
