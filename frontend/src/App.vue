@@ -1,17 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <email-list :emails="emails"></email-list>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EmailList from './components/EmailList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    EmailList
+  },
+  data() {
+    return {
+      emails: [
+        {
+          date: new Date(),
+          subject: 'Nigerian Prince',
+          sender: 'hax@stuff.ru',
+        }, {
+          date: new Date(),
+          subject: 'About that thing',
+          sender: 'hr@nl.abnamro.com',
+        }
+      ]
+    }
   }
 }
 </script>
