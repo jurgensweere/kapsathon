@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="my-2">
-      <b-button class="w-100" variant="success" @click="compose()">New message</b-button>
+   
+    <b-button class="w-100" variant="success" @click="compose()">New message
+      <b-icon class="float-left" icon="cursor" scale="1" variant="light"/>
+    </b-button>
     </div>
     <b-list-group v-for="item in elements" :key="item.id">
       <b-list-group-item href="#" variant="light" @click="openMailbox(item)">

@@ -1,11 +1,11 @@
 <template>
-  <div id="app" class="container">
+  <div id="app">
     <div class="row">
-      <div class="col-3">
+      <div class="col-3 h-100 bg-dark py-2">
         <brand></brand>
         <left-side-bar/>
       </div>
-      <div class="col-9">
+      <div class="col-9 p-0 mt-101">
         <!-- below is part of some view -->
         <mailbox v-if="!compose"></mailbox>
         <compose v-if="compose"></compose>
@@ -53,6 +53,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
+
+.mt-101 {
+  margin-top: 101px;
+}
+
 </style>
