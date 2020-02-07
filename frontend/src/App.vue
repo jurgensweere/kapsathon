@@ -7,8 +7,8 @@
       </div>
       <div class="col-9 p-0 mt-101">
         <!-- below is part of some view -->
-        <mailbox :emails="emails"></mailbox>
-        <compose></compose>
+        <mailbox :emails="emails" v-if="!compose"></mailbox>
+        <compose v-if="compose"></compose>
         <!-- end -->
       </div>
     </div>
@@ -20,6 +20,7 @@ import LeftSideBar from './components/LeftSideBar.vue'
 import Mailbox from './components/Mailbox.vue'
 import Compose from './components/Compose.vue'
 import Brand from './components/Brand.vue'
+import { EventBus } from './event-bus'
 
 export default {
   name: 'App',
@@ -31,6 +32,7 @@ export default {
   },
   data() {
     return {
+      compose: false,
       emails: [
         {
           date: new Date(),
@@ -45,6 +47,14 @@ export default {
         }
       ]
     }
+  },
+  created() {
+    EventBus.$on('compose', () => {
+      this.compose = true;
+    });
+    EventBus.$on('open-mailbox', () => {
+      this.compose = false;
+    });
   }
 }
 </script>
