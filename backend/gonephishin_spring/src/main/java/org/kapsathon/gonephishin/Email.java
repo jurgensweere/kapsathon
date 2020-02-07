@@ -12,9 +12,12 @@ public class Email {
     private String id;
     private String sender;
     private String receiver;
+    private String subject;
     private String body;
     private String date;
     private String meta;
+
+	
 
 	
     public String getId() {
@@ -78,12 +81,29 @@ public class Email {
 	public Email() {
 	}
 
-	public Email(String id, String sender, String receiver, String body, String date, String meta) {
+	public Email(String id, String sender, String receiver, String subject, String body, String date, String meta) {
 		this.id = id;
 		this.sender = sender;
 		this.receiver = receiver;
+		this.subject = subject;
 		this.body = body;
 		this.date = date;
+		this.meta = meta;
+	}
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+
+	public String getMeta() {
+		return meta;
+	}
+
+	public void setMeta(String meta) {
 		this.meta = meta;
 	}
  
