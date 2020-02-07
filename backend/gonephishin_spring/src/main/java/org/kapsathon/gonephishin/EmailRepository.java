@@ -2,12 +2,12 @@ package org.kapsathon.gonephishin;
 
 import java.util.Optional;
 
-import org.socialsignin.spring.data.dynamodb.repository.EnableScan;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-@EnableScan
-public interface EmailRepository extends
-  CrudRepository<Email, String> {
+// @EnableScan
+@Repository
+public interface EmailRepository extends JpaRepository<Email, String> {
      
     Optional<Email> findById(String id);
 }
