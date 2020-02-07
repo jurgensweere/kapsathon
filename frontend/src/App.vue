@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <div class="row">
-      <div class="col-3 h-100 bg-dark py-2">
+    <div class="row h-100">
+      <div class="col-3 h-100 bg-dark py-2 px-0">
         <brand></brand>
         <left-side-bar/>
       </div>
@@ -47,6 +47,9 @@ export default {
 </script>
 
 <style>
+html, body, #app {
+  height: 100%;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

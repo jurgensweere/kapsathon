@@ -18,7 +18,7 @@ export default {
   data() {
       return {
           emails: [],
-          activeIndex: -1
+          activeIndex: 0
       }
   },
   methods: {
@@ -30,6 +30,7 @@ export default {
   created() {
       EventBus.$on('open-mailbox', (emails) => {
           this.emails = emails;
+          this.openEmail(this.emails[0], 0)
       });
   }
 };
