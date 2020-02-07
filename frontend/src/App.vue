@@ -33,10 +33,12 @@ export default {
           date: new Date(),
           subject: 'Nigerian Prince',
           sender: 'hax@stuff.ru',
+          body: 'body1',
         }, {
           date: new Date(),
           subject: 'About that thing',
           sender: 'hr@nl.abnamro.com',
+          body: 'body2',
         }
       ]
     }

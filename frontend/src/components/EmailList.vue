@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import { EventBus } from "../event-bus";
+
 export default {
   name: "EmailList",
   components: {},
@@ -23,6 +25,7 @@ export default {
       openEmail(email, index) {
           this.activeIndex = index;
           console.log(email);
+          EventBus.$emit('emailSelected', email)
       }
   }
 };
