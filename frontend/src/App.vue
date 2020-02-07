@@ -1,7 +1,7 @@
 <template>
   <div id="app" class="container">
     <div class="row">
-      <div class="col-3">
+      <div class="col-3 h-100 bg-dark py-2">
         <brand></brand>
         <left-side-bar/>
       </div>
