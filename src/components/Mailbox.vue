@@ -1,6 +1,6 @@
 <template>
     <div class="row m-0 h-100">
-        <div class="col-lg-4 col-md-5 col-12 p-0 h-100">
+        <div class="mail-list col-lg-4 col-md-5 col-12 p-0 h-100">
         <email-list :emails="emails"></email-list>
         </div>
         <div class="col-lg-8 col-md-7 col-12 p-0 h-100 box-shadow">
@@ -27,4 +27,7 @@ export default {
 </script>
 
 <style>
+.mail-list {
+    background-color: #eee;
+}
 </style>

@@ -86,5 +86,15 @@ html, body, #app {
   background-color: #920000 !important;
   /* background: rgb(52,58,64);
   background: linear-gradient(0deg, rgba(52,58,64,1) 54%, rgba(148,0,0,1) 100%); */
-}  
+}
+.list-group-item {
+  color: #000 !important;
+  background-color: #eee !important;
+  border-color: #eee !important;
+}
+.list-group-item.active {
+  color: #000 !important;
+  background-color: #FFF !important;
+  border-color: #FFF !important;
+}
 </style>
