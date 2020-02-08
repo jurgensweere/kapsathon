@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="my-2">
-      <b-button class="w-100 border-0 border-radius-0" variant="success" @click="compose()">
-        New message
-        <b-icon class="float-left" icon="cursor" scale="1" variant="light" />
+      <b-button class="w-100 border-0 border-radius-0 d-flex justify-content-center" variant="success" @click="compose()">
+        <b-icon class="" icon="cursor" scale="1" variant="light" />
+        <span>New message</span>
       </b-button>
     </div>
     <b-list-group class="email-folders">
-      <b-list-group-item href="#" variant="light" @click="openMailbox(item)" class="border-radius-0" v-for="item in elements" :key="item.id">
-        <span class='d-none d-md-inline-block'>{{item.name}}</span>
-        <b-badge class="float-right" variant="success">{{item.counter}}</b-badge>
-        <b-icon class="float-left" :icon="item.icon" scale="1" variant="success"></b-icon>
+      <b-list-group-item href="#" variant="light" @click="openMailbox(item)" class="border-radius-0 d-flex" v-for="item in elements" :key="item.id">
+        <div class="mr-1"><b-icon class="" :icon="item.icon" scale="1" variant="success"></b-icon></div>
+        <span class="d-none d-md-inline-block">{{item.name}}</span>
+        <div class="ml-auto"><b-badge class="" variant="success">{{item.counter}}</b-badge></div>
       </b-list-group-item>
     </b-list-group>
   </div>
