@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <div class="text-left p-3" v-html="email.body"></div>
+  <div class="text-left p-3" v-if="email.body">
+    <p><span class="person">{{ email.sender }}</span> to <span class="person">{{ email.receiver }}</span></p>
+    <div v-html="email.body"></div>
   </div>
 </template>
 
@@ -23,3 +24,9 @@ export default {
   }
 };
 </script>
+<style scoped>
+.person {
+  font-weight: bold;
+}
+
+</style>
