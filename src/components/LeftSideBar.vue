@@ -32,15 +32,15 @@ export default {
       ]
     };
   },
+  created() {
+    this.openMailbox(this.elements[0]);
+  },
   methods: {
     compose() {
       EventBus.$emit("compose");
     },
     openMailbox(mailbox) {
-      fetch(`${BASE_URL}/get_emails/${mailbox.name.toLowerCase()}`,{
-        method: 'GET',
-        mode: 'no-cors',
-      })
+      fetch(`${BASE_URL}/get_email/${mailbox.name.toLowerCase()}`)
           .then(stream => stream.json())
           .then(data => EventBus.$emit("open-mailbox", data))
           .catch(error => console.error(error));

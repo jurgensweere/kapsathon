@@ -56,17 +56,17 @@ export default {
       evt.preventDefault();
       const body = {
         ...this.form,
-        id: "",
         sender: "nigerian_prince@nl.rabobank.com",
         date: "2018-06-19 10:34:09",
-        metadata: "meta meta meta meta META"
       }
-      fetch(`${BASE_URL}/send_email`, {
+      fetch(`${BASE_URL}/sendemail`, {
         method: 'POST',
-        mode: 'no-cors',
+        // mode: 'no-cors',
         headers: {
-          'Content-Type': 'application/json'
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json',
         },
+
         body: JSON.stringify(body)
       })
           .then(stream => stream.json())
