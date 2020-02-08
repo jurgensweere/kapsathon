@@ -37,35 +37,10 @@ export default {
       EventBus.$emit("compose");
     },
     openMailbox(mailbox) {
-console.log(mailbox)
-      fetch(`${BASE_URL}/get_emails`)
+      fetch(`${BASE_URL}/get_emails/${mailbox.name.toLowerCase()}`)
           .then(stream => stream.json())
           .then(data => EventBus.$emit("open-mailbox", data))
-          .catch(error => console.error(error))
-   
-      //TODO fetch data
-      // const emails = [
-      //   {
-      //     id: "1",
-      //     sender: "nigerian_prince@hotmale.com",
-      //     receiver: "jonnie85@gmail.com",
-      //     subject: "Free money my friend",
-      //     body: "Hi I offer you free money",
-      //     date: "2018-06-19 10:34:09",
-      //     meta: "meta meta meta meta META",
-      //     metadata: "meta meta meta meta META"
-      //   },
-      //   {
-      //     id: "1",
-      //     sender: "kenyan_prince@hotmale.com",
-      //     receiver: "jonnie85@gmail.com",
-      //     subject: "Free money my friend",
-      //     body: "Hi I do not offer you free money",
-      //     date: "2018-06-19 10:34:09",
-      //     meta: "meta meta meta meta META",
-      //     metadata: "meta meta meta meta META"
-      //   }
-      // ];
+          .catch(error => console.error(error));
     }
   }
 };

@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { BASE_URL } from '../constants';
 export default {
   name: "Compose",
   data() {
@@ -60,6 +61,23 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
+      const body = {
+        id: "",
+        sender: "nigerian_prince@hotmale.com",
+        receiver: "jonnie85@gmail.com",
+        subject: "sto cazzo2",
+        body: "Hi I offer you free money",
+        date: "2018-06-19 10:34:09",
+        metadata: "meta meta meta meta META"
+      }
+      fetch(`${BASE_URL}/send_email`, {
+        method: 'POST',
+        body: JSON.stringify(body)
+      })
+          // .then(stream => stream.json())
+          // .then(data => EventBus.$emit("open-mailbox", data))
+          .catch(error => console.error(error));
+
     },
     onReset(evt) {
       evt.preventDefault();
