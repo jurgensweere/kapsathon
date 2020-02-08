@@ -46,7 +46,12 @@ export default {
     },
     openMailbox(mailbox, index) {
       this.activeIndex = index;
-      fetch(`${BASE_URL}/get_email/${mailbox.name.toLowerCase()}`)
+      fetch(`${BASE_URL}/get_email/${mailbox.name.toLowerCase()}`, {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json"
+        },
+      })
           .then(stream => stream.json())
           .then(data => EventBus.$emit("open-mailbox", data))
           .catch(error => console.error(error));
