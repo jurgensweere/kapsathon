@@ -3,7 +3,7 @@
     <b-list-group class="email-folders">
       <div class="py-2">
         <b-button
-          class="w-100 border-0 border-radius-0 d-flex justify-content-center text-center"
+          class="w-100 border-0 border-radius-0 border-0 d-flex justify-content-center text-center"
           variant="dark"
           @click="compose()"
         >
@@ -11,7 +11,7 @@
           <span>New message</span>
         </b-button>
       </div>
-      <b-list-group-item href="#" variant="light" @click="openMailbox(item)" class="border-radius-0 d-flex" v-for="item in elements" :key="item.id">
+      <b-list-group-item href="#" variant="light" @click="openMailbox(item, index)" :class="{'active' : activeIndex == index}" class="border-radius-0 d-flex border-0" v-for="(item, index) in elements" :key="item.id">
         <div class="mr-1"><b-icon class="" :icon="item.icon" scale="1" variant="dark"></b-icon></div>
         <span class="d-none d-md-inline-block">{{item.name}}</span>
         <div class="ml-auto"><b-badge class="" variant="danger">{{item.counter}}</b-badge></div>
@@ -28,6 +28,7 @@ export default {
   name: "LeftSideBar",
   data: () => {
     return {
+      activeIndex: 0,
       elements: [
         { name: "Inbox", id: 1, icon: "inbox-fill", counter: 3 },
         { name: "Sent", id: 2, icon: "eject-fill", counter: 3 },
@@ -38,12 +39,15 @@ export default {
   },
   created() {
     this.openMailbox(this.elements[0]);
+    this.openMailbox('inout', 0);
   },
   methods: {
     compose() {
       EventBus.$emit("compose");
+      this.activeIndex = -1;
     },
-    openMailbox(mailbox) {
+    openMailbox(mailbox, index) {
+      this.activeIndex = index;
       fetch(`${BASE_URL}/get_email/${mailbox.name.toLowerCase()}`)
           .then(stream => stream.json())
           .then(data => EventBus.$emit("open-mailbox", data))
@@ -70,9 +74,18 @@ a {
   color: #343a40;
 }
 
+.list-group-item:hover,
+.list-group-item:active {
+  background-color: #cccccc !important;
+}
+
 @media screen and (max-width: 768px) {
     .email-folders {
         flex-direction: row;
     }
+}
+
+.list-group-item-action.active {
+  background-color: #cccccc !important;
 }
 </style>
