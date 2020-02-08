@@ -56,6 +56,8 @@ html, body, #app {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .border-radius-0 {
@@ -74,5 +76,9 @@ html, body, #app {
     .mh-100 {
         height: 100% !important;
     }
+}
+
+.btn:focus {
+  box-shadow: none !important;
 }
 </style>
