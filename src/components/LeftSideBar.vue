@@ -14,7 +14,6 @@
       <b-list-group-item href="#" variant="light" @click="openMailbox(item, index)" :class="{'active' : activeIndex == index}" class="border-radius-0 d-flex border-0" v-for="(item, index) in elements" :key="item.id">
         <div class="mr-1"><b-icon class="" :icon="item.icon" scale="1" variant="dark"></b-icon></div>
         <span class="d-none d-md-inline-block">{{item.name}}</span>
-        <div class="ml-auto"><b-badge class="" variant="danger">{{item.counter}}</b-badge></div>
       </b-list-group-item>
     </b-list-group>
   </div>
@@ -30,15 +29,15 @@ export default {
     return {
       activeIndex: 0,
       elements: [
-        { name: "Inbox", id: 1, icon: "inbox-fill", counter: 3 },
-        { name: "Sent", id: 2, icon: "eject-fill", counter: 3 },
-        { name: "Archive", id: 3, icon: "archive-fill", counter: 3 },
-        { name: "Spam", id: 4, icon: "cone", counter: 3 }
+        { name: "Inbox", id: 1, icon: "inbox-fill"},
+        { name: "Sent", id: 2, icon: "eject-fill"},
+        { name: "Archive", id: 3, icon: "archive-fill"},
+        { name: "Spam", id: 4, icon: "cone"}
       ]
     };
   },
   created() {
-    this.openMailbox(this.elements[0]);
+    this.openMailbox(this.elements[0], 0);
   },
   methods: {
     compose() {
