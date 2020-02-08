@@ -18,6 +18,8 @@
 
 <script>
 import { EventBus } from "../event-bus";
+import { BASE_URL } from '../constants';
+
 export default {
   name: "LeftSideBar",
   data: () => {
@@ -35,31 +37,35 @@ export default {
       EventBus.$emit("compose");
     },
     openMailbox(mailbox) {
+console.log(mailbox)
+      fetch(`${BASE_URL}/get_emails`)
+          .then(stream => stream.json())
+          .then(data => EventBus.$emit("open-mailbox", data))
+          .catch(error => console.error(error))
+   
       //TODO fetch data
-      const emails = [
-        {
-          id: "1",
-          sender: "nigerian_prince@hotmale.com",
-          receiver: "jonnie85@gmail.com",
-          subject: "Free money my friend",
-          body: "Hi I offer you free money",
-          date: "2018-06-19 10:34:09",
-          meta: "meta meta meta meta META",
-          metadata: "meta meta meta meta META"
-        },
-        {
-          id: "1",
-          sender: "kenyan_prince@hotmale.com",
-          receiver: "jonnie85@gmail.com",
-          subject: "Free money my friend",
-          body: "Hi I do not offer you free money",
-          date: "2018-06-19 10:34:09",
-          meta: "meta meta meta meta META",
-          metadata: "meta meta meta meta META"
-        }
-      ];
-      console.log(mailbox);
-      EventBus.$emit("open-mailbox", emails);
+      // const emails = [
+      //   {
+      //     id: "1",
+      //     sender: "nigerian_prince@hotmale.com",
+      //     receiver: "jonnie85@gmail.com",
+      //     subject: "Free money my friend",
+      //     body: "Hi I offer you free money",
+      //     date: "2018-06-19 10:34:09",
+      //     meta: "meta meta meta meta META",
+      //     metadata: "meta meta meta meta META"
+      //   },
+      //   {
+      //     id: "1",
+      //     sender: "kenyan_prince@hotmale.com",
+      //     receiver: "jonnie85@gmail.com",
+      //     subject: "Free money my friend",
+      //     body: "Hi I do not offer you free money",
+      //     date: "2018-06-19 10:34:09",
+      //     meta: "meta meta meta meta META",
+      //     metadata: "meta meta meta meta META"
+      //   }
+      // ];
     }
   }
 };
