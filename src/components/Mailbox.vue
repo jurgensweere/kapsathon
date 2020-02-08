@@ -1,9 +1,9 @@
 <template>
     <div class="row m-0 h-100">
-        <div class="col-md-4 col-12 p-0 h-100">
+        <div class="col-lg-4 col-md-5 col-12 p-0 h-100">
         <email-list :emails="emails"></email-list>
         </div>
-        <div class="col-md-8 col-12 p-0 h-100 box-shadow">
+        <div class="col-lg-8 col-md-7 col-12 p-0 h-100 box-shadow">
         <email-body></email-body>
         </div>
     </div>

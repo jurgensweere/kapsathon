@@ -26,8 +26,8 @@ export default {
     return {
       elements: [
         { name: "Inbox", id: 1, icon: "inbox-fill", counter: 3 },
-        { name: "Archive", id: 2, icon: "archive-fill", counter: 3 },
-        { name: "Sent", id: 3, icon: "eject-fill", counter: 3 },
+        { name: "Sent", id: 2, icon: "eject-fill", counter: 3 },
+        { name: "Archive", id: 3, icon: "archive-fill", counter: 3 },
         { name: "Spam", id: 4, icon: "cone", counter: 3 }
       ]
     };
