@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="mt-5">
     <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="col-10">
       <!-- Receiver -->
-      <b-form-group id="fieldset-horizontal" label-cols="2" label="To" label-for="input-horizontal">
+      <b-form-group id="fieldset-horizontal" label-cols="1" label="To" label-for="input-horizontal">
         <b-form-input
           id="input-horizontal"
           v-model="form.receiver"
@@ -13,7 +13,7 @@
       <!-- Receiver -->
       <b-form-group
         id="fieldset-horizontal"
-        label-cols="2"
+        label-cols="1"
         label="Message"
         label-for="input-horizontal"
       >
@@ -26,7 +26,7 @@
       </b-form-group>
 
       <!-- Body -->
-      <b-form-textarea id="textarea" v-model="text" rows="8"></b-form-textarea>
+      <b-form-textarea id="textarea" v-model="text" rows="8" class="mx-2"></b-form-textarea>
       <div class="my-4">
         <b-button type="submit" class="w-50 col-3 mx-2 float-right" variant="success">Send</b-button>
         <b-button type="reset" class="w-50 col-3 mx-2 float-right" variant="secondary">Cancel</b-button>

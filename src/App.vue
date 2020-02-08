@@ -3,6 +3,7 @@
     <div class="row mh-100">
       <div class="col-md-3 col-12 mh-100 bg-dark py-2 px-0 left-side-bar">
         <brand></brand>
+        <new-message-button></new-message-button>
         <left-side-bar/>
       </div>
       <div class="col-md-9 col-12 p-0">
@@ -20,6 +21,7 @@ import LeftSideBar from './components/LeftSideBar.vue'
 import Mailbox from './components/Mailbox.vue'
 import Compose from './components/Compose.vue'
 import Brand from './components/Brand.vue'
+import NewMessageButton from './components/NewMessageButton.vue'
 import { EventBus } from './event-bus'
 
 export default {
@@ -29,6 +31,7 @@ export default {
     Mailbox,
     Compose,
     Brand,
+    NewMessageButton,
   },
   data() {
     return {

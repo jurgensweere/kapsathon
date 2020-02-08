@@ -1,11 +1,5 @@
 <template>
   <div>
-    <div class="my-2">
-      <b-button class="w-100 border-0 border-radius-0 d-flex justify-content-center" variant="success" @click="compose()">
-        <b-icon class="" icon="cursor" scale="1" variant="light" />
-        <span>New message</span>
-      </b-button>
-    </div>
     <b-list-group class="email-folders">
       <b-list-group-item href="#" variant="light" @click="openMailbox(item)" class="border-radius-0 d-flex" v-for="item in elements" :key="item.id">
         <div class="mr-1"><b-icon class="" :icon="item.icon" scale="1" variant="success"></b-icon></div>
