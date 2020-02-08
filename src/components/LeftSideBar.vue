@@ -8,7 +8,7 @@
     </div>
     <b-list-group class="email-folders">
       <b-list-group-item href="#" variant="light" @click="openMailbox(item)" class="border-radius-0" v-for="item in elements" :key="item.id">
-        {{item.name}}
+        <span class='d-none d-md-inline-block'>{{item.name}}</span>
         <b-badge class="float-right" variant="success">{{item.counter}}</b-badge>
         <b-icon class="float-left" :icon="item.icon" scale="1" variant="success"></b-icon>
       </b-list-group-item>
