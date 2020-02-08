@@ -154,7 +154,7 @@
           </div>
         </editor-menu-bar>
 
-        <editor-content class="editor__content form-control mt-2" :editor="editor" />
+        <editor-content class="editor__content form-control mt-2" :editor="editor"/>
       </div>
       <div class="my-4">
         <b-button type="submit" class="w-50 col-3 float-right" variant="success">Send</b-button>
@@ -189,8 +189,7 @@ import { BASE_URL } from "../constants";
 function emptyForm() {
   return {
     receiver: "",
-    subject: "",
-    body: ""
+    subject: ""
   };
 }
 
@@ -233,8 +232,10 @@ export default {
   methods: {
     onSubmit(evt) {
       evt.preventDefault();
+
       const body = {
         ...this.form,
+        body: this.editor.getHTML(),
         sender: "nigerian_prince@nl.rabobank.com"
       };
       fetch(`${BASE_URL}/sendemail`, {
@@ -247,17 +248,21 @@ export default {
 
         body: JSON.stringify(body)
       })
-        .then(stream => stream.json())
+        // .then(stream => stream.json())
         .then(this.onSent)
         .catch(error => console.error(error));
     },
     onSent() {
       this.form = emptyForm();
+      this.editor.clearContent(true)
+      this.editor.focus()
     },
     onReset(evt) {
       evt.preventDefault();
       // Reset our form values
       this.form = emptyForm();
+      this.editor.clearContent(true)
+      this.editor.focus()
       // Trick to reset/clear native browser form validation state
       this.show = false;
       this.$nextTick(() => {
