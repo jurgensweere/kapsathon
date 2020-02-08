@@ -1,6 +1,6 @@
 <template>
-  <div class="mt-5">
-    <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="col-10">
+  <div>
+    <b-form @submit="onSubmit" @reset="onReset" v-if="show" class="col-12 mt-4">
       <!-- Receiver -->
       <b-form-group id="fieldset-horizontal" label-cols="1" label="To" label-for="input-horizontal">
         <b-form-input
@@ -28,7 +28,7 @@
       <!-- Body -->
       <b-form-textarea id="textarea" v-model="text" rows="8" class="mx-2"></b-form-textarea>
       <div class="my-4">
-        <b-button type="submit" class="w-50 col-3 mx-2 float-right" variant="success">Send</b-button>
+        <b-button type="submit" class="w-50 col-3 float-right" variant="success">Send</b-button>
         <b-button type="reset" class="w-50 col-3 mx-2 float-right" variant="secondary">Cancel</b-button>
       </div>
     </b-form>
@@ -36,6 +36,7 @@
 </template>
 
 <script>
+import { BASE_URL } from '../constants';
 export default {
   name: "Compose",
   data() {
@@ -60,6 +61,23 @@ export default {
     onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
+      const body = {
+        id: "",
+        sender: "nigerian_prince@hotmale.com",
+        receiver: "jonnie85@gmail.com",
+        subject: "sto cazzo2",
+        body: "Hi I offer you free money",
+        date: "2018-06-19 10:34:09",
+        metadata: "meta meta meta meta META"
+      }
+      fetch(`${BASE_URL}/send_email`, {
+        method: 'POST',
+        body: JSON.stringify(body)
+      })
+          // .then(stream => stream.json())
+          // .then(data => EventBus.$emit("open-mailbox", data))
+          .catch(error => console.error(error));
+
     },
     onReset(evt) {
       evt.preventDefault();

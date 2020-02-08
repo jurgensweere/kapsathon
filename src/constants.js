@@ -1,1 +1,2 @@
-export const BASE_URL = 'http://68.183.8.90:8080';
+
+export const BASE_URL = process.env.VUE_APP_API;

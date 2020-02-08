@@ -1,6 +1,6 @@
 <template>
     <div class="mb-2 brand">
-        <img src="~@/assets/che.webp"> Che Mail
+        <img src="~@/assets/che.png"> Che Mail
     </div>
 </template>
 
