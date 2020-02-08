@@ -12,7 +12,7 @@
         <i>{{ email.sender }}</i>
       </div>
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">{{ email.subject }}</h5>
+        <h5 class="mb-1 text-truncate">{{ email.subject }}</h5>
         <small>{{ email.date }}</small>
       </div>
     </b-list-group-item>
