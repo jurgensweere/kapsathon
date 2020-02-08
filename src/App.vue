@@ -5,7 +5,7 @@
         <brand></brand>
         <left-side-bar/>
       </div>
-      <div class="col-md-9 col-12 p-0">
+      <div class="col-md-9 col-12 p-0 h-100">
         <!-- below is part of some view -->
         <mailbox v-show="!compose"></mailbox>
         <compose v-if="compose"></compose>
@@ -49,6 +49,7 @@ export default {
 <style>
 html, body, #app {
   height: 100%;
+  overflow: hidden;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

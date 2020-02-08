@@ -39,7 +39,6 @@ export default {
   },
   created() {
     this.openMailbox(this.elements[0]);
-    this.openMailbox('inout', 0);
   },
   methods: {
     compose() {
