@@ -37,7 +37,10 @@ export default {
       EventBus.$emit("compose");
     },
     openMailbox(mailbox) {
-      fetch(`${BASE_URL}/get_emails/${mailbox.name.toLowerCase()}`)
+      fetch(`${BASE_URL}/get_emails/${mailbox.name.toLowerCase()}`,{
+        method: 'GET',
+        mode: 'no-cors',
+      })
           .then(stream => stream.json())
           .then(data => EventBus.$emit("open-mailbox", data))
           .catch(error => console.error(error));
