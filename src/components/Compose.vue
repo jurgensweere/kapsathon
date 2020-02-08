@@ -23,7 +23,7 @@
       </b-form-group>
 
       <!-- Body -->
-      <b-form-textarea v-model="form.body" rows="8"></b-form-textarea>
+      <b-form-textarea id="textarea" rows="8" class="mx-2"></b-form-textarea>
       <div class="my-4">
         <b-button type="submit" class="w-50 col-3 float-right" variant="success">Send</b-button>
         <b-button type="reset" class="w-50 col-3 mx-2 float-right" variant="secondary">Cancel</b-button>
