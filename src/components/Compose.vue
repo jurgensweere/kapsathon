@@ -157,7 +157,7 @@
         <editor-content class="editor__content form-control mt-2" :editor="editor"/>
       </div>
       <div class="my-4">
-        <b-button type="submit" class="w-50 col-3 float-right" variant="success">Send</b-button>
+        <b-button type="submit" class="w-50 col-3 float-right" variant="danger">Send</b-button>
         <b-button type="reset" class="w-50 col-3 mx-2 float-right" variant="secondary">Cancel</b-button>
       </div>
     </b-form>
