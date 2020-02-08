@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>{{email.body}}</div>
+    <div class="text-left p-3" v-html="email.body"></div>
   </div>
 </template>
 

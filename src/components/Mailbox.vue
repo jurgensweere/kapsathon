@@ -29,5 +29,7 @@ export default {
 <style>
 .mail-list {
     background-color: #eee;
+    overflow: scroll;
+    height: 100%;
 }
 </style>
