@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div class="row mh-100">
-      <div class="col-md-3 col-12 mh-100 bg-dark py-2 px-0 left-side-bar">
+      <div class="col-md-3 col-12 mh-100 py-2 px-0 left-side-bar bg-gradient">
         <brand></brand>
         <left-side-bar/>
       </div>
@@ -81,4 +81,10 @@ html, body, #app {
 .btn:focus {
   box-shadow: none !important;
 }
+
+.bg-gradient {
+  background-color: #920000 !important;
+  /* background: rgb(52,58,64);
+  background: linear-gradient(0deg, rgba(52,58,64,1) 54%, rgba(148,0,0,1) 100%); */
+}  
 </style>
