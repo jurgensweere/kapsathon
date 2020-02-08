@@ -6,8 +6,8 @@
         <b-icon class="float-left" icon="cursor" scale="1" variant="light" />
       </b-button>
     </div>
-    <b-list-group v-for="item in elements" :key="item.id">
-      <b-list-group-item href="#" variant="light" @click="openMailbox(item)" class="border-radius-0">
+    <b-list-group class="email-folders">
+      <b-list-group-item href="#" variant="light" @click="openMailbox(item)" class="border-radius-0" v-for="item in elements" :key="item.id">
         {{item.name}}
         <b-badge class="float-right" variant="success">{{item.counter}}</b-badge>
         <b-icon class="float-left" :icon="item.icon" scale="1" variant="success"></b-icon>
@@ -80,5 +80,11 @@ li {
 }
 a {
   color: #42b983;
+}
+
+@media screen and (max-width: 768px) {
+    .email-folders {
+        flex-direction: row;
+    }
 }
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div class="row h-100">
-      <div class="col-3 h-100 bg-dark py-2 px-0">
+    <div class="row mh-100">
+      <div class="col-md-3 col-12 mh-100 bg-dark py-2 px-0 left-side-bar">
         <brand></brand>
         <left-side-bar/>
       </div>
-      <div class="col-9 p-0">
+      <div class="col-md-9 col-12 p-0">
         <!-- below is part of some view -->
         <mailbox v-show="!compose"></mailbox>
         <compose v-if="compose"></compose>
@@ -68,5 +68,11 @@ html, body, #app {
 
 .list-group {
   text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+    .mh-100 {
+        height: 100% !important;
+    }
 }
 </style>
