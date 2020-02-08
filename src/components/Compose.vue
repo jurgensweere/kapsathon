@@ -57,7 +57,6 @@ export default {
       const body = {
         ...this.form,
         sender: "nigerian_prince@nl.rabobank.com",
-        date: "2018-06-19 10:34:09",
       }
       fetch(`${BASE_URL}/sendemail`, {
         method: 'POST',
