@@ -23,6 +23,7 @@
 <script>
 import { EventBus } from "../event-bus";
 import { BASE_URL } from '../constants';
+import  faker from 'faker';
 
 export default {
   name: "LeftSideBar",
@@ -32,7 +33,8 @@ export default {
         { name: "Inbox", id: 1, icon: "inbox-fill", counter: 3 },
         { name: "Sent", id: 2, icon: "eject-fill", counter: 3 },
         { name: "Archive", id: 3, icon: "archive-fill", counter: 3 },
-        { name: "Spam", id: 4, icon: "cone", counter: 3 }
+        { name: "Spam", id: 4, icon: "cone", counter: 3 },
+        { name: "Generate", id: 5, icon: "cone", counter: 3 }
       ]
     };
   },
@@ -44,11 +46,42 @@ export default {
       EventBus.$emit("compose");
     },
     openMailbox(mailbox) {
-      fetch(`${BASE_URL}/get_email/${mailbox.name.toLowerCase()}`)
-          .then(stream => stream.json())
-          .then(data => EventBus.$emit("open-mailbox", data))
-          .catch(error => console.error(error));
+      console.log('openMailbox', mailbox);
+      if(mailbox.name === 'Generate'){
+        this.generate();
+      } else {
+        fetch(`${BASE_URL}/get_email/${mailbox.name.toLowerCase()}`)
+            .then(stream => stream.json())
+            .then(data => EventBus.$emit("open-mailbox", data))
+            .catch(error => console.error(error));
+        }
+    },
+    generate() {
+      for(let i=0; i<1; i++) {
+
+      let body = {
+        sender: faker.internet.email(),
+        receiver: faker.internet.exampleEmail(),
+        subject: faker.hacker.phrase(),
+        body: faker.hacker.phrase(),
+      };
+      
+      console.log('openMailbox result', body);
+        fetch(`${BASE_URL}/sendemail`, {
+       method: "POST",
+        // mode: 'no-cors',
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(body)
+      })
+      .then(r => console.log("exxx ", r))
+      .catch(error => console.error('getting error', error));
+      }
     }
+    
   }
 };
 </script>
