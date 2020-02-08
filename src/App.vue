@@ -98,4 +98,8 @@ html, body, #app {
   background-color: #FFF !important;
   border-color: #FFF !important;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
 </style>

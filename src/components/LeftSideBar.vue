@@ -11,7 +11,7 @@
           <span>New message</span>
         </b-button>
       </div>
-      <b-list-group-item href="#" variant="light" @click="openMailbox(item, index)" :class="{'active' : activeIndex == index}" class="border-radius-0 d-flex border-0" v-for="(item, index) in elements" :key="item.id">
+      <b-list-group-item href="#" variant="light" @click="openMailbox(item, index)" :class="{'active' : activeIndex == index}" class="border-radius-0 d-flex border-0 cursor-pointer" v-for="(item, index) in elements" :key="item.id">
         <div class="mr-1"><b-icon class="" :icon="item.icon" scale="1" variant="dark"></b-icon></div>
         <span class="d-none d-md-inline-block">{{item.name}}</span>
       </b-list-group-item>
